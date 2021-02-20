@@ -32,7 +32,7 @@ namespace HomeWork
             int imageCount = 52;
             int imagesInRow = 3;
             int fullRowsCount = imageCount / imagesInRow;
-            int remainImage = imageCount % 3;
+            int remainImage = imageCount % imagesInRow;
             Console.WriteLine(fullRowsCount);
             Console.WriteLine(remainImage);
             /* ДЗ № 4.
@@ -50,8 +50,9 @@ namespace HomeWork
             int gemCost = 4;
             Console.WriteLine("Сколько кристаллов хотите приобрести?");
             int gemsToBuyValue = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"У вас: {goldCount - gemCost * gemsToBuyValue} золота и {gemsToBuyValue} кристалов");
-            Console.WriteLine(@"У вас: {0} золота и {1} кристалов", goldCount - gemCost * gemsToBuyValue , gemsToBuyValue);
+            int goldAfterPurchase = goldCount - gemCost * gemsToBuyValue;
+            Console.WriteLine($"У вас: {goldAfterPurchase} золота и {gemsToBuyValue} кристалов");
+            
             /*ДЗ № 5.
              * Легенда:
 
@@ -65,7 +66,9 @@ namespace HomeWork
             Console.WriteLine("Сколько людей в очереди?");
             int peopleInQueue = Convert.ToInt32(Console.ReadLine());
             int timeForPatient = 10;
-            Console.WriteLine(@"Вы должны отстоять в очереди {0} часа и {1} минут", peopleInQueue * timeForPatient / 60, peopleInQueue * timeForPatient % 60);
+            int hoursInQueue = peopleInQueue * timeForPatient / 60;
+            int minutesInQueue = peopleInQueue * timeForPatient % 60;
+            Console.WriteLine(@"Вы должны отстоять в очереди {0} часа и {1} минут", hoursInQueue , minutesInQueue);
             /*ДЗ № 6.
              * Вы задаете вопросы пользователю, по типу "как вас зовут", "какой ваш знак зодиака" и тд, 
              * после чего, по данным, которые он ввел, формируете небольшой текст о пользователе.
