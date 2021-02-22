@@ -13,7 +13,7 @@ namespace OutputControl
             string userInput = null;
             while (userInput != "exit")
             {
-                Console.WriteLine("Введите пароль или exit для продолжения");
+                Console.WriteLine("Введите exit для завершения");
                 userInput = Console.ReadLine();
             }
         }
