@@ -10,15 +10,11 @@ namespace OutputControl
     {
         static void Main(string[] args)
         {
-            string userInput;
-            while (true)
+            string userInput = null;
+            while (userInput != "exit")
             {
                 Console.WriteLine("Введите пароль или exit для продолжения");
                 userInput = Console.ReadLine();
-                if (userInput == "exit")
-                {
-                    break;
-                }
             }
         }
     }
