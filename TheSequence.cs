@@ -11,18 +11,13 @@ namespace TheSequence
         static void Main(string[] args)
         {
             int minValue = 7;
-            int maxValue = 98;
-            int stepCount = 7;
+            int stepValue = 7;
+            int stepCount = 14;
             int value = minValue;
-            while (value <= maxValue)
+            for (int i = 0; i < stepCount; i++)
             {
                 Console.Write(" " + value);
-                value += stepCount;
-            }
-            Console.WriteLine();
-            for (value = minValue; value <= maxValue; value += stepCount)
-            {
-                Console.Write(" " + value);
+                value += stepValue;
             }
         }
     }
