@@ -12,7 +12,7 @@ namespace ConsoleMenu
         {
             string userChangeMenu = null;
             string changedColor;
-            bool isValidPassword = false;
+            bool enteredCorrectPassword = false;
             string validPassword = "qwert";
             string userName = "User";
             while (userChangeMenu != "ESC")
@@ -20,9 +20,9 @@ namespace ConsoleMenu
                 Console.Clear();
                 Console.WriteLine("ChangeBackgroundColor     - Изменить цвет фона консоли");
                 Console.WriteLine("ChangeFontColor           - Изменить цвет шрифта");
-                if (!isValidPassword)
+                if (enteredCorrectPassword == false)
                     Console.WriteLine("EnterPassword             - Введите пароль");
-                if (isValidPassword)
+                else if (enteredCorrectPassword)
                 {
                     Console.WriteLine("SetUserName               - Установить имя пользователя");
                     Console.WriteLine("SetPassword               - Установить новый пароль");
@@ -95,19 +95,34 @@ namespace ConsoleMenu
                     case "EnterPassword":
                         string inputPassword = Console.ReadLine();
                         if (inputPassword == validPassword)
-                            isValidPassword = true;
+                            enteredCorrectPassword = true;
                         else
                             Console.WriteLine("Неверный пароль");
                         break;
                     case "SetUserName":
-                        Console.WriteLine("Введите Имя пользователя:");
-                        userName = Console.ReadLine();
+                        if (enteredCorrectPassword)
+                        {
+                            Console.WriteLine("Введите Имя пользователя:");
+                            userName = Console.ReadLine();
+                        }
+                        else 
+                            Console.WriteLine("Авторизуйтеь для доступа к расширенной функциональности");
                         break;
                     case "SetPassword":
-                        validPassword = Console.ReadLine();
+                        if (enteredCorrectPassword)
+                        {
+                            validPassword = Console.ReadLine();
+                        }
+                        else
+                            Console.WriteLine("Авторизуйтеь для доступа к расширенной функциональности");
                         break;
                     case "WriteUserName":
-                        Console.WriteLine("Имя пользователя: " + userName);
+                        if (enteredCorrectPassword)
+                        {
+                            Console.WriteLine("Имя пользователя: " + userName);
+                        }
+                        else 
+                            Console.WriteLine("Авторизуйтеь для доступа к расширенной функциональности");
                         break;
                     case "ESC":
                         break;
