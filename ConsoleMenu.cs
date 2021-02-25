@@ -21,8 +21,10 @@ namespace ConsoleMenu
                 Console.WriteLine("ChangeBackgroundColor     - Изменить цвет фона консоли");
                 Console.WriteLine("ChangeFontColor           - Изменить цвет шрифта");
                 if (enteredCorrectPassword == false)
+                {
                     Console.WriteLine("EnterPassword             - Введите пароль");
-                else if (enteredCorrectPassword)
+                }
+                else
                 {
                     Console.WriteLine("SetUserName               - Установить имя пользователя");
                     Console.WriteLine("SetPassword               - Установить новый пароль");
@@ -105,8 +107,10 @@ namespace ConsoleMenu
                             Console.WriteLine("Введите Имя пользователя:");
                             userName = Console.ReadLine();
                         }
-                        else 
+                        else
+                        {
                             Console.WriteLine("Авторизуйтеь для доступа к расширенной функциональности");
+                        }
                         break;
                     case "SetPassword":
                         if (enteredCorrectPassword)
@@ -114,15 +118,19 @@ namespace ConsoleMenu
                             validPassword = Console.ReadLine();
                         }
                         else
+                        {
                             Console.WriteLine("Авторизуйтеь для доступа к расширенной функциональности");
+                        }
                         break;
                     case "WriteUserName":
                         if (enteredCorrectPassword)
                         {
                             Console.WriteLine("Имя пользователя: " + userName);
                         }
-                        else 
+                        else
+                        {
                             Console.WriteLine("Авторизуйтеь для доступа к расширенной функциональности");
+                        }
                         break;
                     case "ESC":
                         break;
